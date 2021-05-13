@@ -1,0 +1,87 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div style="height: 500px">
+    <center>
+
+<h1 class='display-1'>Automated Image</h1>
+<h1 class='display-1'>Captioning</h1>
+
+<br>
+<br>
+
+<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
+    <input type="file" name='file1'>
+<input type="submit" name="btn" value='predict caption' class='btn btn-warning'>
+</form>
+      <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+</center>
+</div>
+<div style="background-color: #5d4257">
+	<center>
+		<h1>How It Works?</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+
+</div>
+<div style="background-color: #000000">
+    <center>
+
+	<h1 class='display-2'>Predicted Caption </h1>
+
+	<br>
+	<br>
+
+<img src="{{url_for('static', filename='file.jpg')}}" alt="image" height=400px>
+
+<br>
+
+<h2>
+	{{data}}
+</h2>
+
+</center>
+</div>
+<div style="background-color: #0cbaba">
+	<center>
+		<h1>About Us</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+
+</div>
+<div style="background-color: #d98324">
+	<center>
+		<h1>Contact Us</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+</div>
+
+{%endblock%}
