@@ -1,0 +1,123 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div style="height: 500px">
+    <div style="text-align: center;">
+
+		<h1 class='display-1'>Automated Image</h1>
+		<h1 class='display-1'>Captioning</h1>
+
+		<br>
+		<br>
+	</div>
+<!--		<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>-->
+<!--		    <input type="file" name='query_img'>-->
+<!--		<input type="submit" name="btn" value='predict caption' class='btn btn-warning'>-->
+<!--		</form>-->
+
+	<div class="row">
+		<div class="col s1"></div>
+		<div class="col s8">
+			<center>
+				<form method="POST" enctype="multipart/form-data" action="{{url_for('after')}}">
+					<div class = "row">
+							<div class = "file-field input-field">
+							   <div>
+								  <input type = "file" name = 'query_img'/>
+								  <span><button type="submit" class="btn waves-effect waves-light">Caption<i class="material-icons right">remove_red_eye</i> </button></span>
+							   </div>
+
+							   <div class = "file-path-wrapper">
+								  <input class = "file-path validate" type = "text"
+									 placeholder = "Upload Image" />
+							   </div>
+							</div>
+					</div>
+				</form>
+			</center>
+		</div>
+		<div class="col s1"></div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+	</div>
+<!--	{% if query_path %}-->
+<!--		<div class="row">-->
+<!--			<div class="col s2"></div>-->
+<!--				<div class="col s8">-->
+<!--					<h5>Given Image: </h5>-->
+<!--					<img id="img" src="{{ query_path }}" width="40%" alt="Query" class="z-depth-2">-->
+<!--				</div>-->
+<!--		</div>-->
+<!--	{% endif %}-->
+
+
+
+</div>
+<div style="background-color: #5d4257">
+	<center>
+		<h1>How It Works?</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+
+</div>
+<div style="background-color: #000000">
+    <center>
+
+	<h1 class='display-2'>Predicted Caption </h1>
+
+	<br>
+	<br>
+
+<img src="{{url_for('static', filename='file.jpg')}}" alt="image" height=400px>
+
+<br>
+
+<h2>
+	{{data}}
+</h2>
+
+</center>
+</div>
+<div style="background-color: #0cbaba">
+	<center>
+		<h1>About Us</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+
+</div>
+<div style="background-color: #d98324">
+	<center>
+		<h1>Contact Us</h1>
+	 <ul>
+		  <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	  </ul>
+	</center>
+</div>
+
+{%endblock%}
