@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+
+/models/flickr8k_cnn_lstm_v1.p
