@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # image-captioning-keras-resnet
 run 
 <br>
@@ -10,3 +11,6 @@ kaggle notebook : https://www.kaggle.com/programminghut/imagecaptioning
 2] non_interative.py for cli predictions.
 
 
+=======
+Image Caption Generator
+>>>>>>> main

@@ -1,0 +1,1 @@
+Download and save flickr8k_cnn_lstm_v1.p from: https://drive.google.com/file/d/1xw9iho-n_QPdOndCJk2viG6dPavnB_4h/view?usp=sharing in this directory

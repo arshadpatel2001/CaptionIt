@@ -1,6 +1,7 @@
 {%extends "base.html"%}
 
 {%block content%}
+<<<<<<< HEAD
 <div style="height: 500px">
     <center>
 
@@ -56,6 +57,176 @@
 
 </center>
 </div>
+=======
+<style>
+	@-webkit-keyframes slide_animation{
+	0%{left:1200px;}
+	10%{left:1200px;}
+	20%{left:0px;}
+	30%{left:0px;}
+	40%{left:0px;}
+	50%{left:0px;}
+	60%{left:0px;}
+	70%{left:0px;}
+	80%{left:0px;}
+	90%{left:0px;}
+	100%{left:0px;}
+}
+@keyframes stripes {
+	100% {
+		background-position: 20px 0, 20px 0, 20px 0;
+	}
+}
+.circle{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #573B63;
+	clip-path: circle(1200px at right 800px);
+	-webkit-animation-name: slide_animation;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-play-state: running;
+}
+
+.mainRunner {
+  position: relative;
+}
+
+.img1 {
+	height: 680px;
+  position: relative;
+  z-index: 1;
+  top: -881px;
+  left: 190px;
+}
+
+.img2 {
+  position: relative;
+  z-index: 2;
+  top: -1410px;
+  left: 120px;
+}
+.img3 {
+  position: relative;
+  z-index: 2;
+  top: -1260px;
+  left: 5px;
+}
+.img4 {
+  position: relative;
+  z-index: 2;
+  top: -1110px;
+  left: -90px;
+}
+.img5 {
+  position: relative;
+  z-index: 2;
+  top: -960px;
+  left: -200px;
+}
+.numberCircle {
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    font-family: Garamond,serif;
+    border: 4px solid #262280;
+}
+</style>
+
+<div style="height: 700px">
+	<div style="background-color: #4C4A7A">
+	<center>
+		<h1 style="color: #ffffff;font-family: Papyrus,Fantasy">How It Works?</h1>
+	</center>
+</div>
+
+<div style="top: 65px;position: relative;left: 500px">
+	<h1 class="numberCircle" style="position: relative;left: -250px;top: -8px">1</h1>
+	<h2 style="top: -65px;position: relative;left: -200px; font-weight: 20px;color: #262280;">...............................................................</h2>
+	<h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">SELECT IMAGE</h2>
+	<h2 style="position: relative;left: -870px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Click on the select image button<br>and choose the image to create caption.</h2>
+</div>
+<div style="top: 10px;position: relative;left: 940px;">
+	<h1 class="numberCircle" style="position: relative;left: 240px;top: -8px">2</h1>
+	<h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">...............................................................</h2>
+	<h2 style="position: relative;left: 70px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">PREDICT CAPTION</h2>
+	<h2 style="position: relative;left: -600px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Click on the predict caption button<br>to let the prediction process begin!</h2>
+</div>
+<div style="top: -50px;position: relative;left: 500px">
+	<h1 class="numberCircle" style="position: relative;left: -250px;top: -8px">3</h1>
+	<h2 style="top: -65px;position: relative;left: -200px; font-weight: 20px;color: #262280;">...............................................................</h2>
+	<h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">BREATHE</h2>
+	<h2 style="position: relative;left: -900px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Relax and breathe!<br>Let our algorithms do the work for you<br>and give you a final output.</h2>
+</div>
+<div style="top: -130px;position: relative;left: 940px;">
+	<h1 class="numberCircle" style="position: relative;left: 240px;top: -8px">4</h1>
+	<h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">...............................................................</h2>
+	<h2 style="position: relative;left: 70px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">CAPTION IS READY!</h2>
+	<h2 style="position: relative;left: -600px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Yay! Your output is ready.<br>Check the caption generated for your image</h2>
+</div>
+
+
+
+<center>
+	<div class="mainRunner">
+		<center>
+  <img class="img1" src="{{ url_for('static', filename = 'arr.png')}}"/>
+  <img class="img2" src="{{ url_for('static', filename = 'select.png')}}" style="height: 100px;width: 100px;"/>
+  <img class="img3" src="{{ url_for('static', filename = 'capt.png')}}" style="height: 100px;width: 100px" />
+  <img class="img4" src="{{ url_for('static', filename = 'algo.png')}}" style="height: 100px;width: 100px" />
+  <img class="img5" src="{{ url_for('static', filename = 'get.png')}}" style="height: 100px;width: 100px" />
+  </center>
+</div>
+</center>
+</div>
+
+
+<div style="width: 100%;display: flex;align-items: center;justify-content: center;font-family: 'Bungee Shade', cursive;background: #E4CCEE; height: 700px;top: 200px;position: relative;">
+	<div class="circle">
+		<h1 data-heading="Slide" style="display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	font-weight: normal;
+	width: 100%;
+	text-align: center;
+	left: 100;
+	position: relative;
+	font-size: 100px;
+	background: linear-gradient(
+		-45deg,
+		#C5E93D 25%,
+		#fff 25%,
+		#fff 50%,
+		#C5E93D 50%,
+		#C5E93D 75%,
+		#fff 75%,
+		#fff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 20px 20px;
+	background-position: 0 0;
+	animation: stripes 1s linear infinite;">Automatic<br>Caption<br>Generator</h1>
+	</div>
+
+
+
+<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
+    <input type="file" name='file1'>
+<input type="submit" name="btn" value='predict caption' class='btn btn-warning'>
+</form>
+</div>
+
+
+
+
+>>>>>>> main
 <div style="background-color: #0cbaba">
 	<center>
 		<h1>About Us</h1>
@@ -84,4 +255,8 @@
 	</center>
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 {%endblock%}
