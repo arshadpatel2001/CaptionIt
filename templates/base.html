@@ -9,22 +9,22 @@
 	  <!--Import materialize.css-->
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" xmlns="http://www.w3.org/1999/html">
 
-    <title>CaptIt</title>
+    <title>CaptionIt</title>
   </head>
   <body>
 
-<div class="banner-text">
+<div class="banner-text" id="welcome" >
 		<ul>
-			<li>Home</li>
-			<li>How It Works?</li>
-			<li>About</li>
-			<li>Contact</li>
+			<a href="#welcome"><li>Home</li></a>
+			<a href="#working"><li>How it Works</li></a>
+			<a href="#caption"><li>Predict Caption</li></a>
+			<a href="#team"><li>Our Team</li></a>
+			<a href="#about"><li>About Us</li></a>
 		</ul>
 		<h2>Welcome to our Website</h2>
 	</div>

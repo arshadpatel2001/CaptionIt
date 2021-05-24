@@ -2,22 +2,24 @@
 
 {%block content%}
 <!-- THIS IS CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" xmlns="http://www.w3.org/1999/html">
-<!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
 <!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
 <script type = "text/javascript">
  function DoAnimation() {
-
-      document.getElementById('cam').style.display='block';
+ document.getElementById("capimg_div").style.display ='block';
       var targetElement = document.getElementById("capimg_div");
       targetElement.className = "fade-in-image";
-
     }
 const myFunction = () => {
   document.getElementById("cam").style.display ='block';
   setTimeout(function() {
   document.getElementById('cam').style.display='none'
 }, 2000);
+  }
+
+  function doBoth() {
+  DoAnimation();
+  myFunction();
   }
   function readURL(input) {
         if (input.files && input.files[0]) {
@@ -31,18 +33,12 @@ const myFunction = () => {
             reader.readAsDataURL(input.files[0]);
         }
     }
-
-  function doBoth() {
-  DoAnimation();
-  myFunction();
-  }
 </script>
-
 
 <!-- HERE BEGINS THE ACTUAL HTML THING -->
 
 <!-- THIS IS FIRST DIV -  HOW IT WORKS? -->
-<div style="width: 100%;height: 100vh;background: linear-gradient(to left, #000000, #7f5a83);" id="working">
+<div style="width: 100%;height: 100vh;background: linear-gradient(to left, #000000, #7f5a83);">
 
 		<svg viewBox="0 0.2 10 10" xmlns="http://www.w3.org/2000/svg">
 			<defs>
@@ -96,7 +92,7 @@ const myFunction = () => {
 
 <!-- THIS IS SECOND DIV - CHOOSE IMAGE AND PREDICT IMAGE -->
 <div style="width: 100%;display: flex;align-items: center;justify-content: center;font-family: 'Bungee Shade', cursive;background: linear-gradient(to left, #000000, #7f5a83);
- height: 700px;top: 0px;position: relative;" id="caption">
+ height: 700px;top: 0px;position: relative;">
 
 	<svg viewBox="0.1 3.1 10 10" xmlns="http://www.w3.org/2000/svg" style="position:absolute;z-index:0;">
 			<defs>
@@ -119,15 +115,14 @@ const myFunction = () => {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
   text-shadow:8px 8px #ff1f8f,20px 20px #000000;">Automatic<br>Caption<br>Generator</span>
-
 	<img id="cam" src="{{ url_for('static', filename = 'cam-unscreen.gif')}}" height="500px" width="600px" style="position:absolute;top: -50px;left: 750px;display:none;z-index:3;"/>
 	<img id="myimage" src="{{ url_for('static', filename = 'camera.png')}}" height="400px" width="550px" style="position:absolute;top: -40px;left: 760px;z-index:2;" />
 	<img id="fram" src="{{ url_for('static', filename = 'came.png')}}" height="600px" width="800px" style="position:absolute;top: 200px;left: 850px;z-index:1"/>
-	<div id="capimg_div" style="display: none;">
+	<div id="capimg_div" style="display:none;">
    <img id="cap_img" src="#" alt="{{ url_for('static', filename = 'file.jpg')}}" height="400px" width="300px" style="position:absolute;top: 260px;left: 1100px;z-index:0"/>
 </div>
 
-	<p style="left:500px;top:350px;position:relative;z-index:2;font-size:18px">{{ data }}</p>
+	<h1 style="left:490px;top:350px;position:relative;z-index:2"> {{data}}</h1>
 
 	<div style="display: -webkit-box;
   display: -ms-flexbox;
@@ -143,22 +138,11 @@ const myFunction = () => {
 position:absolute;
 left:100px;
 top:600px;">
-
-		<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
-			 <input type="file" id="actual-btn" name='query_img' onchange="readURL(this);" hidden/>
-			<label class="effect1" for="actual-btn">
+		<input type="file" id="actual-btn" name="query_image" onchange="readURL(this);" hidden/>
+		<label class="effect1" for="actual-btn">
 			Upload Image
 			<span class="bg"></span>
 		</label>
-
-			<input type="submit" name="btn" value='predict caption' class='effect1' onclick="doBoth()"  id="pred-btn" hidden/>
-    		<label style="left:200px" class="effect1" for="pred-btn">
-    Predict Caption
-    <span class="bg"></span>
-			</label>
-
-
-		</form>
 </div>
 	<div style="display: -webkit-box;
   display: -ms-flexbox;
@@ -174,6 +158,16 @@ top:600px;">
 position:absolute;
 left:400px;
 top:595px;">
+<!--		<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>-->
+<!--			 <input type="file" name='query_img'>-->
+<!--			<input type="submit" name="btn" value='predict caption' class='effect1' onclick="doBoth()">-->
+<a class="effect1" onclick="doBoth()">-->
+    Predict Caption
+    <span class="bg"></span>
+  </a>
+
+<!--		</form>-->
+
 
 </div>
 </div>
@@ -181,7 +175,7 @@ top:595px;">
 
 
 <!-- THIS IS THIRD DIV - CONTACT US/OUR TEAM -->
-<div style="position:relative;background-color: #fff;" id="team">
+<div style="position:relative;background-color: #fff;">
 	<h1 class="text" style="position:relative;top:200px;z-index:2;left:-760px;
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;
   font-size: 92px;
@@ -238,7 +232,7 @@ display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 
 	</div>
 	<div style="background: linear-gradient(to left, #000000, #7f5a83);top:200px;height:300px;"></div>
 </div>
-<div style="position:relative;background-color: #fff;" id="about">
+<div style="position:relative;background-color: #fff;">
 	<h1 class="text2" style="position:relative;top:100px;z-index:2;left:-760px;
 
   font-size: 92px;
@@ -250,16 +244,8 @@ display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 
   padding: 10px;
 
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h3 style="color: #fff; padding: 90px">We The Students of Vishwakarma Institute of Technology Pune hereby, We have made an Automatic Image Caption Generator.
-This is expected to help any individual by generating captions for images automatically.We hope that this project helps numerous those in need for the same, and make life simpler.</h3>
+		<h3 style="color: #fff; padding: 70px">WE, <br>The Students of Vishwakarma Institute of Technology Pune hereby, <br> We have made an Automatic Image Caption Generator.
+This is<br> expected to help any individual by generating captions for images automatically.We hope that this project helps numerous those in need for the same, and make life simpler.</h3>
 
 	</div></div>
-
-	<div style="position:relative;top:100px;height:100px;width:500px;left:500px;
-	background-color: white;
-  padding: 10px;
-
-display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h4 style="color: #000000">@copyright 2021 No Copyright</h4>
-	</div>
 {%endblock%}
