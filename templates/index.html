@@ -15,9 +15,9 @@
     }
 const myFunction = () => {
   document.getElementById("cam").style.display ='block';
-  setTimeout(function() {
-  document.getElementById('cam').style.display='none'
-}, 2000);
+<!--  setTimeout(function() {-->
+<!--  document.getElementById('cam').style.display='none'-->
+<!--}, 2000);-->
   }
   function readURL(input) {
         if (input.files && input.files[0]) {
@@ -123,7 +123,7 @@ const myFunction = () => {
 	<img id="cam" src="{{ url_for('static', filename = 'cam-unscreen.gif')}}" height="500px" width="600px" style="position:absolute;top: -50px;left: 750px;display:none;z-index:3;"/>
 	<img id="myimage" src="{{ url_for('static', filename = 'camera.png')}}" height="400px" width="550px" style="position:absolute;top: -40px;left: 760px;z-index:2;" />
 	<img id="fram" src="{{ url_for('static', filename = 'came.png')}}" height="600px" width="800px" style="position:absolute;top: 200px;left: 850px;z-index:1"/>
-	<div id="capimg_div" style="display: none;">
+	<div id="capimg_div" style="display:block;">
    <img id="cap_img" src="#" alt="{{ url_for('static', filename = 'file.jpg')}}" height="400px" width="300px" style="position:absolute;top: 260px;left: 1100px;z-index:0"/>
 </div>
 
