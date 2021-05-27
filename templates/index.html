@@ -15,9 +15,9 @@
     }
 const myFunction = () => {
   document.getElementById("cam").style.display ='block';
-<!--  setTimeout(function() {-->
-<!--  document.getElementById('cam').style.display='none'-->
-<!--}, 2000);-->
+  setTimeout(function() {
+  document.getElementById('cam').style.display='none'
+}, 2000);
   }
   function readURL(input) {
         if (input.files && input.files[0]) {
@@ -194,43 +194,51 @@ top:595px;">
   box-shadow: 5px 5px 5px 5px #fff;
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
 	<div class="container">
+
 		<div class="card">
 			<div class="imgBx" style="position:relative;top:-150px;left:-20px;">
 				<img src="{{ url_for('static', filename = 'arsh.png')}}">
+				<p></p>
+				<h2 style="padding: 10px 10px 10px 50px">Arshad Patel</h2>
 			</div>
 			<div class="content">
-				<h2>Arshad Patel</h2>
-				<h3><a href="https://www.linkedin.com/in/arshadpatel2001?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Btx9A4KAuT3i0YwTx0SBQoA%3D%3D">LinkedIn</a></h3>
+
+				<h3 style="padding: 20px 0px 0px 0px"><a href="https://www.linkedin.com/in/arshadpatel2001?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Btx9A4KAuT3i0YwTx0SBQoA%3D%3D">LinkedIn</a></h3>
+
 			</div>
+
 		</div>
 
 		<div class="card">
 			<div class="imgBx" style="position:relative;top:-90px;left:30px;">
 				<img src="{{ url_for('static', filename = 'parn.png')}}">
+				<h2 style="padding: 20px 10px 10px 0px">Pranali Pardeshi</h2>
 			</div>
 			<div class="content">
-				<h2>Pranali Pardeshi</h2>
-				<h3><a href="https://www.linkedin.com/in/pranali-pardeshi-9b3021194?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQvLywENgReyzcPZM02FUgw%3D%3D">LinkedIn</a></h3>
+
+				<h3 style="padding: 20px 0px 0px 0px"><a href="https://www.linkedin.com/in/pranali-pardeshi-9b3021194?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQvLywENgReyzcPZM02FUgw%3D%3D">LinkedIn</a></h3>
 			</div>
 		</div>
 
 		<div class="card">
 			<div class="imgBx" style="position:relative;height:200px;width:200px;top:-90px;left:-10px;">
-				<img src="{{ url_for('static', filename = 'aar.png')}}">
+				<img src="{{ url_for('static', filename = 'aaro.png')}}">
+				<h2 style="padding: 20px 10px 10px 30px">Aarohi Patil</h2>
 			</div>
 			<div class="content">
-				<h2>Aarohi Patil</h2>
-				<h3><a href="https://www.linkedin.com/in/aarohi-patil-03a164200?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLWIe4qTSTKKWlL1%2F8YxWRg%3D%3D">LinkedIn</a></h3>
+
+				<h3 style="padding: 80px 0px 0px 0px"><a href="https://www.linkedin.com/in/aarohi-patil-03a164200?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLWIe4qTSTKKWlL1%2F8YxWRg%3D%3D">LinkedIn</a></h3>
 			</div>
 		</div>
 
 		<div class="card">
 			<div class="imgBx" style="position:relative;height:200px;width:200px;top:-110px;left:10px;">
 				<img src="{{ url_for('static', filename = 'om.png')}}">
+				<h2 style="padding: 20px 10px 10px 0px">Om Chakane</h2>
 			</div>
 			<div class="content">
-				<h2>Om Chakane</h2>
-				<h3><a href="https://www.linkedin.com/in/om-chakane-b085861a1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be7vJoslzQVmDIthiT8oCpw%3D%3D">LinkedIn</a></h3>
+
+				<h3 style="padding: 80px 0px 0px 0px"><a href="https://www.linkedin.com/in/om-chakane-b085861a1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be7vJoslzQVmDIthiT8oCpw%3D%3D">LinkedIn</a></h3>
 			</div>
 		</div>
 
@@ -250,7 +258,7 @@ display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 
   padding: 10px;
 
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h3 style="color: #fff; padding: 90px">We The Students of Vishwakarma Institute of Technology Pune hereby, We have made an Automatic Image Caption Generator.
+		<h3 style="color: #fff; padding: 90px; font-family: 'Brush Script MT', cursive; font-size: 2em">We The Students of Vishwakarma Institute of Technology Pune hereby, We have made an Automatic Image Caption Generator.
 This is expected to help any individual by generating captions for images automatically.We hope that this project helps numerous those in need for the same, and make life simpler.</h3>
 
 	</div></div>
@@ -260,6 +268,6 @@ This is expected to help any individual by generating captions for images automa
   padding: 10px;
 
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h4 style="color: #000000">@copyright 2021 No Copyright</h4>
+		<h4 style="color: #000000">@Copyright 2021 All Rights Reserved</h4>
 	</div>
 {%endblock%}
