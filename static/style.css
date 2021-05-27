@@ -306,8 +306,8 @@ transition-delay: 0.3s;
     top: 50%;
     right: 50%;
     transform: translate(50%,-50%);
-    font-family: verdana;
-    font-size: 12em;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 15em;
     font-weight: 700;
     color: #000;
     text-shadow: 1px 1px 1px #fff,
