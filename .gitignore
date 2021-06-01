@@ -134,4 +134,4 @@ dmypy.json
 
 /static/database/*
 
-/Old Files/*
+/old_files
