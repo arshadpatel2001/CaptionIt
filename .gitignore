@@ -133,3 +133,5 @@ dmypy.json
 /models/flickr8k_cnn_lstm_v1.p
 
 /static/database/*
+
+/Old Files/
