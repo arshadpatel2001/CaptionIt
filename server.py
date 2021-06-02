@@ -14,20 +14,22 @@ app.config['UPLOAD_FOLDER'] = os.path.join('static', 'database')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png'}
 
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/after', methods=['GET', 'POST'])
 def after():
     if request.method == 'POST':
         if 'query_img' not in request.files or request.files['query_img'].filename == '' or not allowed_file(
                 request.files['query_img'].filename):
-
             return render_template('index.html')
 
         print("=" * 50)
@@ -56,17 +58,6 @@ def after():
     else:
         return render_template('index.html')
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
+    app.run()
