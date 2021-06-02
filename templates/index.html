@@ -1,114 +1,133 @@
-{%extends "base.html"%}
+{% extends "base.html" %}
 
-{%block content%}
-<!-- THIS IS CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" xmlns="http://www.w3.org/1999/html">
-<!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
-<!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
-<script type = "text/javascript">
- function DoAnimation() {
+{% block content %}
+    <!-- THIS IS CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" xmlns="http://www.w3.org/1999/html">
+    <!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
+    <!-- THIS IS A BIT OF JAVASCRIPT FOR THE BUTTON THING - WHEN BUTTON(PREDICT CAPTION) IS CLICKED CAMERA FLASHES -->
+    <script type="text/javascript">
+        function DoAnimation() {
 
-      document.getElementById('cam').style.display='block';
-      var targetElement = document.getElementById("capimg_div");
-      targetElement.className = "fade-in-image";
+            document.getElementById('cam').style.display = 'block';
+            var targetElement = document.getElementById("capimg_div");
+            targetElement.className = "fade-in-image";
 
-    }
-const myFunction = () => {
-  document.getElementById("cam").style.display ='block';
-  setTimeout(function() {
-  document.getElementById('cam').style.display='none'
-}, 2000);
-  }
-  function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#cap_img')
-                    .attr('src', e.target.result)
-            };
-
-            reader.readAsDataURL(input.files[0]);
         }
-    }
 
-  function doBoth() {
-  DoAnimation();
-  myFunction();
-  }
-</script>
+        const myFunction = () => {
+            document.getElementById("cam").style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('cam').style.display = 'none'
+            }, 2000);
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#cap_img')
+                        .attr('src', e.target.result)
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function doBoth() {
+            DoAnimation();
+            myFunction();
+        }
+    </script>
 
 
-<!-- HERE BEGINS THE ACTUAL HTML THING -->
+    <!-- HERE BEGINS THE ACTUAL HTML THING -->
 
-<!-- THIS IS FIRST DIV -  HOW IT WORKS? -->
-<div style="width: 100%;height: 100vh;background: linear-gradient(to left, #000000, #7f5a83);" id="working">
+    <!-- THIS IS FIRST DIV -  HOW IT WORKS? -->
+    <div style="width: 100%;height: 100vh;background: linear-gradient(to left, #000000, #7f5a83);" id="working">
 
-		<svg viewBox="0 0.2 10 10" xmlns="http://www.w3.org/2000/svg">
-			<defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7f5a83;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <circle cx="50%" cy="50%" r="4.8" fill="white"/>
-</svg>
-	<center>
-		<h1 style="color: #000000;font-family: Papyrus,Fantasy;text-align:center;font-size: 50px;top:-1500px;position:relative;">How It Works?</h1>
-	</center>
-	<div style="top: -1425px;position: relative;left: 500px">
-	<h1 class="numberCircle" style="position: relative;left: -190px;top: -12px">1</h1>
-	<h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">..........................................</h2>
-	<h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">SELECT IMAGE</h2>
-	<h2 style="position: relative;left: -870px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Click on the select image button<br>and choose the image to create caption.</h2>
-</div>
-<div style="top: -1460px;position: relative;left: 980px;">
-	<h1 class="numberCircle" style="position: relative;left: 170px;top: -12px">2</h1>
-	<h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">..........................................</h2>
-	<h2 style="position: relative;left: 70px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">PREDICT CAPTION</h2>
-	<h2 style="position: relative;left: -600px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Click on the predict caption button<br>to let the prediction process begin!</h2>
-</div>
-<div style="top: -1480px;position: relative;left: 500px">
-	<h1 class="numberCircle" style="position: relative;left: -190px;top: -12px">3</h1>
-	<h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;z-index:2;">..........................................</h2>
-	<h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">BREATHE</h2>
-	<h2 style="position: relative;left: -900px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Relax and breathe!<br>Let our algorithms do the work for you<br>and give you a final output.</h2>
-</div>
-<div style="top: -1500px;position: relative;left: 980px;">
-	<h1 class="numberCircle" style="position: relative;left: 170px;top: -32px">4</h1>
-	<h2 style="top: -85px;position: relative;left: -150px; font-weight: 20px;color: #262280;z-index:2;">..........................................</h2>
-	<h2 style="position: relative;left: 70px;top: -70px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">CAPTION IS READY!</h2>
-	<h2 style="position: relative;left: -600px;top: -70px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">Yay! Your output is ready.</h2>
-</div>
+        <svg viewBox="0 0.2 10 10" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#7f5a83;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#000000;stop-opacity:1"/>
+                </linearGradient>
+            </defs>
+            <circle cx="50%" cy="50%" r="4.8" fill="white"/>
+        </svg>
+        <center>
+            <h1 style="color: #000000;font-family: Papyrus,Fantasy;text-align:center;font-size: 50px;top:-1500px;position:relative;">
+                How It Works?</h1>
+        </center>
+        <div style="top: -1425px;position: relative;left: 500px">
+            <h1 class="numberCircle" style="position: relative;left: -190px;top: -12px">1</h1>
+            <h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">
+                ..........................................</h2>
+            <h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">
+                SELECT IMAGE</h2>
+            <h2 style="position: relative;left: -870px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">
+                Click on the select image button<br>and choose the image to create caption.</h2>
+        </div>
+        <div style="top: -1460px;position: relative;left: 980px;">
+            <h1 class="numberCircle" style="position: relative;left: 170px;top: -12px">2</h1>
+            <h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;">
+                ..........................................</h2>
+            <h2 style="position: relative;left: 70px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">
+                PREDICT CAPTION</h2>
+            <h2 style="position: relative;left: -600px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">
+                Click on the predict caption button<br>to let the prediction process begin!</h2>
+        </div>
+        <div style="top: -1480px;position: relative;left: 500px">
+            <h1 class="numberCircle" style="position: relative;left: -190px;top: -12px">3</h1>
+            <h2 style="top: -65px;position: relative;left: -150px; font-weight: 20px;color: #262280;z-index:2;">
+                ..........................................</h2>
+            <h2 style="position: relative;left: -200px;top: -50px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">
+                BREATHE</h2>
+            <h2 style="position: relative;left: -900px;top: -50px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">
+                Relax and breathe!<br>Let our algorithms do the work for you<br>and give you a final output.</h2>
+        </div>
+        <div style="top: -1500px;position: relative;left: 980px;">
+            <h1 class="numberCircle" style="position: relative;left: 170px;top: -32px">4</h1>
+            <h2 style="top: -85px;position: relative;left: -150px; font-weight: 20px;color: #262280;z-index:2;">
+                ..........................................</h2>
+            <h2 style="position: relative;left: 70px;top: -70px;font-family: Consolas,Consolas; color: #2A1E81;font-size: 20px">
+                CAPTION IS READY!</h2>
+            <h2 style="position: relative;left: -600px;top: -70px;font-family: Goudy Old Style,Goudy Old Style; color: #BBB9CA;font-size: 20px;text-align: center;">
+                Yay! Your output is ready.</h2>
+        </div>
 
-<center>
-	<div class="mainRunner">
-		<center>
-  <img class="img1" src="{{ url_for('static', filename = 'arr.png')}}"/>
-  <img class="img2" src="{{ url_for('static', filename = 'select.png')}}" style="height: 100px;width: 100px;"/>
-  <img class="img3" src="{{ url_for('static', filename = 'capt.png')}}" style="height: 100px;width: 100px" />
-  <img class="img4" src="{{ url_for('static', filename = 'algo.png')}}" style="height: 100px;width: 100px" />
-  <img class="img5" src="{{ url_for('static', filename = 'get.png')}}" style="height: 100px;width: 100px" />
-  </center>
-</div>
-</center>
-</div>
+        <center>
+            <div class="mainRunner">
+                <center>
+                    <img class="img1" src="{{ url_for('static', filename = 'arr.png') }}"/>
+                    <img class="img2" src="{{ url_for('static', filename = 'select.png') }}"
+                         style="height: 100px;width: 100px;"/>
+                    <img class="img3" src="{{ url_for('static', filename = 'capt.png') }}"
+                         style="height: 100px;width: 100px"/>
+                    <img class="img4" src="{{ url_for('static', filename = 'algo.png') }}"
+                         style="height: 100px;width: 100px"/>
+                    <img class="img5" src="{{ url_for('static', filename = 'get.png') }}"
+                         style="height: 100px;width: 100px"/>
+                </center>
+            </div>
+        </center>
+    </div>
 
-<!-- THIS IS SECOND DIV - CHOOSE IMAGE AND PREDICT IMAGE -->
-<div style="width: 100%;display: flex;align-items: center;justify-content: center;font-family: 'Bungee Shade', cursive;background: linear-gradient(to left, #000000, #7f5a83);
+    <!-- THIS IS SECOND DIV - CHOOSE IMAGE AND PREDICT IMAGE -->
+    <div style="width: 100%;display: flex;align-items: center;justify-content: center;font-family: 'Bungee Shade', cursive;background: linear-gradient(to left, #000000, #7f5a83);
  height: 700px;top: 0px;position: relative;" id="caption">
 
-	<svg viewBox="0.1 3.1 10 10" xmlns="http://www.w3.org/2000/svg" style="position:absolute;z-index:0;">
-			<defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7f5a83;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <circle cx="50%" cy="50%" r="1.5" fill="white"/>
-</svg>
+        <svg viewBox="0.1 3.1 10 10" xmlns="http://www.w3.org/2000/svg" style="position:absolute;z-index:0;">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#7f5a83;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#000000;stop-opacity:1"/>
+                </linearGradient>
+            </defs>
+            <circle cx="50%" cy="50%" r="1.5" fill="white"/>
+        </svg>
 
-	<span style="position: absolute;
+        <span style="position: absolute;
 	font-family: 'Montserrat', sans-serif;
   top: 300px;
   left: 400px;
@@ -120,16 +139,20 @@ const myFunction = () => {
   -webkit-text-stroke-color: white;
   text-shadow:8px 8px #ff1f8f,20px 20px #000000;">Automatic<br>Caption<br>Generator</span>
 
-	<img id="cam" src="{{ url_for('static', filename = 'cam-unscreen.gif')}}" height="500px" width="600px" style="position:absolute;top: -50px;left: 750px;display:none;z-index:3;"/>
-	<img id="myimage" src="{{ url_for('static', filename = 'camera.png')}}" height="400px" width="550px" style="position:absolute;top: -40px;left: 760px;z-index:2;" />
-	<img id="fram" src="{{ url_for('static', filename = 'came.png')}}" height="600px" width="800px" style="position:absolute;top: 200px;left: 850px;z-index:1"/>
-	<div id="capimg_div" style="display: none;">
-   <img id="cap_img" src="#" alt="{{ url_for('static', filename = 'file.jpg')}}" height="400px" width="300px" style="position:absolute;top: 260px;left: 1100px;z-index:0"/>
-</div>
+        <img id="cam" src="{{ url_for('static', filename = 'cam-unscreen.gif') }}" height="500px" width="600px"
+             style="position:absolute;top: -50px;left: 750px;display:none;z-index:3;"/>
+        <img id="myimage" src="{{ url_for('static', filename = 'camera.png') }}" height="400px" width="550px"
+             style="position:absolute;top: -40px;left: 760px;z-index:2;"/>
+        <img id="fram" src="{{ url_for('static', filename = 'came.png') }}" height="600px" width="800px"
+             style="position:absolute;top: 200px;left: 850px;z-index:1"/>
+        <div id="capimg_div" style="display:block;">
+            <img id="cap_img" src="{{ file }}" alt="{{ file }}" height="400px" width="400px"
+                 style="position:absolute;top: 255px;left: 1055px;z-index:0"/>
+        </div>
 
-	<p style="left:500px;top:350px;position:relative;z-index:2;font-size:18px">{{ data }}</p>
+        <p style="left:1050px;top:650px;right:50px;position:absolute;z-index:2;font-size:18px">{{ data }}</p>
 
-	<div style="display: -webkit-box;
+        <div style="display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
@@ -144,23 +167,24 @@ position:absolute;
 left:100px;
 top:600px;">
 
-		<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
-			 <input type="file" id="actual-btn" name='query_img' onchange="readURL(this);" hidden/>
-			<label class="effect1" for="actual-btn">
-			Upload Image
-			<span class="bg"></span>
-		</label>
+            <form action="{{ url_for('after') }}" method='POST' enctype='multipart/form-data'>
+                <input type="file" id="actual-btn" name='query_img' onchange="readURL(this);" hidden/>
+                <label class="effect1" for="actual-btn">
+                    Upload Image
+                    <span class="bg"></span>
+                </label>
 
-			<input type="submit" name="btn" value='predict caption' class='effect1' onclick="doBoth()"  id="pred-btn" hidden/>
-    		<label style="left:200px" class="effect1" for="pred-btn">
-    Predict Caption
-    <span class="bg"></span>
-			</label>
+                <input type="submit" name="btn" value='predict caption' class='effect1' onclick="doBoth()" id="pred-btn"
+                       hidden/>
+                <label style="left:200px" class="effect1" for="pred-btn">
+                    Predict Caption
+                    <span class="bg"></span>
+                </label>
 
 
-		</form>
-</div>
-	<div style="display: -webkit-box;
+            </form>
+        </div>
+        <div style="display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
@@ -175,91 +199,110 @@ position:absolute;
 left:400px;
 top:595px;">
 
-</div>
-</div>
+        </div>
+    </div>
 
 
 
-<!-- THIS IS THIRD DIV - CONTACT US/OUR TEAM -->
-<div style="position:relative;background-color: #fff;" id="team">
-	<h1 class="text" style="position:relative;top:200px;z-index:2;left:-760px;
+    <!-- THIS IS THIRD DIV - CONTACT US/OUR TEAM -->
+    <div style="position:relative;background-color: #fff;" id="team">
+        <h1 class="text" style="position:relative;top:200px;z-index:2;left:-760px;
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;
   font-size: 92px;
   text-align: center;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;">OUR TEAM</h1>
-	<div style="position:relative;top:200px;height:600px;width:1200px;left:150px;
+        <div style="position:relative;top:200px;height:600px;width:1200px;left:150px;
 	background-color: thistle;
   padding: 10px;
   box-shadow: 5px 5px 5px 5px #fff;
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-	<div class="container">
-		<div class="card">
-			<div class="imgBx" style="position:relative;top:-150px;left:-20px;">
-				<img src="{{ url_for('static', filename = 'arsh.png')}}">
-			</div>
-			<div class="content">
-				<h2>Arshad Patel</h2>
-				<h3><a href="https://www.linkedin.com/in/arshadpatel2001?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Btx9A4KAuT3i0YwTx0SBQoA%3D%3D">LinkedIn</a></h3>
-			</div>
-		</div>
+            <div class="container">
 
-		<div class="card">
-			<div class="imgBx" style="position:relative;top:-90px;left:30px;">
-				<img src="{{ url_for('static', filename = 'parn.png')}}">
-			</div>
-			<div class="content">
-				<h2>Pranali Pardeshi</h2>
-				<h3><a href="https://www.linkedin.com/in/pranali-pardeshi-9b3021194?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQvLywENgReyzcPZM02FUgw%3D%3D">LinkedIn</a></h3>
-			</div>
-		</div>
+                <div class="card">
+                    <div class="imgBx" style="position:relative;top:-150px;left:-20px;">
+                        <img src="{{ url_for('static', filename = 'arsh.png') }}">
+                        <p></p>
+                        <h2 style="padding: 10px 10px 10px 50px">Arshad Patel</h2>
+                    </div>
+                    <div class="content">
 
-		<div class="card">
-			<div class="imgBx" style="position:relative;height:200px;width:200px;top:-90px;left:-10px;">
-				<img src="{{ url_for('static', filename = 'aar.png')}}">
-			</div>
-			<div class="content">
-				<h2>Aarohi Patil</h2>
-				<h3><a href="https://www.linkedin.com/in/aarohi-patil-03a164200?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLWIe4qTSTKKWlL1%2F8YxWRg%3D%3D">LinkedIn</a></h3>
-			</div>
-		</div>
+                        <h3 style="padding: 20px 0px 0px 0px"><a
+                                href="https://www.linkedin.com/in/arshadpatel2001?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Btx9A4KAuT3i0YwTx0SBQoA%3D%3D">LinkedIn</a>
+                        </h3>
 
-		<div class="card">
-			<div class="imgBx" style="position:relative;height:200px;width:200px;top:-110px;left:10px;">
-				<img src="{{ url_for('static', filename = 'om.png')}}">
-			</div>
-			<div class="content">
-				<h2>Om Chakane</h2>
-				<h3><a href="https://www.linkedin.com/in/om-chakane-b085861a1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be7vJoslzQVmDIthiT8oCpw%3D%3D">LinkedIn</a></h3>
-			</div>
-		</div>
+                    </div>
 
-	</div>
-	</div>
-	<div style="background: linear-gradient(to left, #000000, #7f5a83);top:200px;height:300px;"></div>
-</div>
-<div style="position:relative;background-color: #fff;" id="about">
-	<h1 class="text2" style="position:relative;top:100px;z-index:2;left:-760px;
+                </div>
+
+                <div class="card">
+                    <div class="imgBx" style="position:relative;top:-90px;left:30px;">
+                        <img src="{{ url_for('static', filename = 'parn.png') }}">
+                        <h2 style="padding: 20px 10px 10px 0px">Pranali Pardeshi</h2>
+                    </div>
+                    <div class="content">
+
+                        <h3 style="padding: 20px 0px 0px 0px"><a
+                                href="https://www.linkedin.com/in/pranali-pardeshi-9b3021194?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQvLywENgReyzcPZM02FUgw%3D%3D">LinkedIn</a>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="imgBx" style="position:relative;height:200px;width:200px;top:-90px;left:-10px;">
+                        <img src="{{ url_for('static', filename = 'aaro.png') }}">
+                        <h2 style="padding: 20px 10px 10px 30px">Aarohi Patil</h2>
+                    </div>
+                    <div class="content">
+
+                        <h3 style="padding: 80px 0px 0px 0px"><a
+                                href="https://www.linkedin.com/in/aarohi-patil-03a164200?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLWIe4qTSTKKWlL1%2F8YxWRg%3D%3D">LinkedIn</a>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="imgBx" style="position:relative;height:200px;width:200px;top:-110px;left:10px;">
+                        <img src="{{ url_for('static', filename = 'om.png') }}">
+                        <h2 style="padding: 20px 10px 10px 0px">Om Chakane</h2>
+                    </div>
+                    <div class="content">
+
+                        <h3 style="padding: 80px 0px 0px 0px"><a
+                                href="https://www.linkedin.com/in/om-chakane-b085861a1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be7vJoslzQVmDIthiT8oCpw%3D%3D">LinkedIn</a>
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="background: linear-gradient(to left, #000000, #7f5a83);top:200px;height:300px;"></div>
+    </div>
+    <div style="position:relative;background-color: #fff;" id="about">
+        <h1 class="text2" style="position:relative;top:100px;z-index:2;left:-760px;
 
   font-size: 92px;
   text-align: center;
 
   ">About Us</h1>
-	<div style="position:relative;top:100px;height:300px;width:1000px;left:300px;
+        <div style="position:relative;top:100px;height:300px;width:1000px;left:300px;
 	background-color: black;
   padding: 10px;
 
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h3 style="color: #fff; padding: 90px">We The Students of Vishwakarma Institute of Technology Pune hereby, We have made an Automatic Image Caption Generator.
-This is expected to help any individual by generating captions for images automatically.We hope that this project helps numerous those in need for the same, and make life simpler.</h3>
+            <h3 style="color: #fff; padding: 90px; font-family: 'Brush Script MT', cursive; font-size: 2em">We are the
+                Students of Vishwakarma Institute of Technology (Pune) and we have made an Automatic Image Caption
+                Generator which is expected to help generating captions for images.We hope that this project helps those
+                in need for the same.</h3>
 
-	</div></div>
+        </div>
+    </div>
 
-	<div style="position:relative;top:100px;height:100px;width:500px;left:500px;
+    <div style="position:relative;top:100px;height:100px;width:500px;left:500px;
 	background-color: white;
   padding: 10px;
 
 display:flex;justify-content:center;align-items:center;z-index:1;border-radius: 100px;">
-		<h4 style="color: #000000">@copyright 2021 No Copyright</h4>
-	</div>
-{%endblock%}
+        <h4 style="color: #000000">© Copyright 2021 All Rights Reserved</h4>
+    </div>
+{% endblock %}
