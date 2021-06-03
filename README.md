@@ -11,14 +11,14 @@
   <p align="center">
     SY CS C Group 2
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/arshadpatel2001/Edi-Sy-Sem-2/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://captionithere.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/arshadpatel2001/Edi-Sy-Sem-2/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/arshadpatel2001/Edi-Sy-Sem-2/issues">Request Feature</a>
   </p>
 </p>
 
@@ -82,7 +82,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/arshadpatel2001/Edi-Sy-Sem-2.git
    ```
    or Download the code as zip file and then unzip in your desired folder.
    
@@ -118,8 +118,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 * Aarohi Patil
 * Arshad Patel
-* Pranali Pardeshi
 * Om Chakane
+* Pranali Pardeshi
 
 
 ## Acknowledgements
