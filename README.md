@@ -1,12 +1,7 @@
 
 
 <br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://o.remove.bg/downloads/a00d6049-1d8f-4674-b1bb-a26a4c72b5ce/image-removebg-preview.png" alt="Logo" width="500" height="300">
-  </a>
-
-  <h3 align="center">AUTOMATIC IMAGE CAPTION GENERATOR</h3>
+  <h3 align="center">Caption It</h3>
 
   <p align="center">
     SY CS C Group 2
