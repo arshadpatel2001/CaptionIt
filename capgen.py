@@ -2,7 +2,8 @@ import os
 import numpy as np
 from imagernn.imagernn_utils import decodeGenerator
 import pickle
-from keras.applications import VGG16,imagenet_utils
+from keras.applications import imagenet_utils
+from tensorflow.keras.applications.vgg16 import VGG16
 from keras.preprocessing.image import load_img,img_to_array
 from keras.models import Model
 import tensorflow as tf
