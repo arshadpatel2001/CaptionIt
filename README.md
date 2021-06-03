@@ -81,7 +81,7 @@ This is an example of how to list things you need to use the software and how to
    ```
    or Download the code as zip file and then unzip in your desired folder.
    
-2. Run the index.html file
+2. Run the server.py file
    
 3. Click on "Upload Image" Button
 
