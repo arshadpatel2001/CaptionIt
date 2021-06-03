@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project aimed at creating a web application for generating automatic caption for any type of image.
+This project is aimed at creating a web application for generating automatic caption for any type of image.
 Caption generators are widely used now-a-days for simplifying the task of manual image captioning.
 Sometimes tasks get cumbersome as large sets of images are to be worked upon.
 
@@ -111,10 +111,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-* <a href="#https://www.linkedin.com/in/aarohi-patil-03a164200">Aarohi Patil</a>
-* <a href="#https://www.linkedin.com/in/arshadpatel2001">Arshad Patel</a>
-* <a href="#https://www.linkedin.com/in/om-chakane-b085861a1">Om Chakane</a>
-* <a href="#https://www.linkedin.com/in/pranali-pardeshi-9b3021194">Pranali Pardeshi</a>
+* <a href="https://www.linkedin.com/in/aarohi-patil-03a164200">Aarohi Patil</a>
+* <a href="https://www.linkedin.com/in/arshadpatel2001">Arshad Patel</a>
+* <a href="https://www.linkedin.com/in/om-chakane-b085861a1">Om Chakane</a>
+* <a href="https://www.linkedin.com/in/pranali-pardeshi-9b3021194">Pranali Pardeshi</a>
 
 
 ## Acknowledgements
