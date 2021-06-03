@@ -81,8 +81,10 @@ This is an example of how to list things you need to use the software and how to
    ```
    or Download the code as zip file and then unzip in your desired folder.
    
-2. Run the server.py file
-   
+2. Run the code by 
+  ```sh
+   python server.py
+   ```
 3. Click on "Upload Image" Button
 
 4. Click on "Predict Caption" Button
