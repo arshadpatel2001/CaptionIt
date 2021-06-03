@@ -111,10 +111,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-* Aarohi Patil
-* Arshad Patel
-* Om Chakane
-* Pranali Pardeshi
+* <a href="#https://www.linkedin.com/in/aarohi-patil-03a164200">Aarohi Patil</a>
+* <a href="#https://www.linkedin.com/in/arshadpatel2001">Arshad Patel</a>
+* <a href="#https://www.linkedin.com/in/om-chakane-b085861a1">Om Chakane</a>
+* <a href="#https://www.linkedin.com/in/pranali-pardeshi-9b3021194">Pranali Pardeshi</a>
 
 
 ## Acknowledgements
